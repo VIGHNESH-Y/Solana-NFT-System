@@ -24,17 +24,13 @@ const NFTCard = ({ nft, index }) => (
       </div>
     </div>
     <a href={`/nft-details?mint=${nft?.mint}`} target="_blank" className="date">
-      View{" "}
+      View
     </a>
   </div>
 );
 
 const TopCreator = ({ name, index, title, address }) => (
-  <div
-    className={`widget-creators-item flex items-center ${
-      index == 5 ? "" : "mb-20"
-    } `}
-  >
+  <div className={`widget-creators-item flex items-center ${index == 5 ? "" : "mb-20"} `}>
     <div className="order">{index}.</div>
     <div className="author flex items-center flex-grow">
       <img src={`assets/images/avatar/avatar-small-0${index}.png`} alt="" />
@@ -54,11 +50,7 @@ const TopCreator = ({ name, index, title, address }) => (
 );
 
 const TrendingCoins = ({ name, index, image }) => (
-  <div
-    className={`widget-coins-item flex items-center ${
-      index == 5 ? "" : "mb-20"
-    } `}
-  >
+  <div className={`widget-coins-item flex items-center ${index == 5 ? "" : "mb-20"} `}>
     <img src={`assets/images/box-icon/${image}`} alt="" />
     <p>
       <a>{name}</a>
@@ -67,11 +59,7 @@ const TrendingCoins = ({ name, index, image }) => (
 );
 
 const HistoryCard = ({ name, notify, index, image, date }) => (
-  <div
-    className={`widget-creators-item flex items-center ${
-      index == 5 ? "" : "mb-20"
-    }`}
-  >
+  <div className={`widget-creators-item flex items-center ${index == 5 ? "" : "mb-20"}`}>
     <div className="author flex items-center flex-grow">
       <img
         src="logo-solana.png"
@@ -143,7 +131,7 @@ const BodySideBar = ({ reCall }) => {
               </div>
             </div>
             {nfts
-              ?.map((nft, index) => <NFTCard nft={nft} index={index} />)
+              ?.map((nft, index) => <NFTCard key={index} nft={nft} index={index} />)
               .slice(0, 4)}
           </div>
           <div className="widget widget-creators">
@@ -154,6 +142,7 @@ const BodySideBar = ({ reCall }) => {
             {activeSeller
               ?.map((item, index) => (
                 <TopCreator
+                  key={index}
                   name={SHORTEN_ADDRESS(item)}
                   title={"creator"}
                   index={index + 1}
@@ -165,14 +154,15 @@ const BodySideBar = ({ reCall }) => {
         </>
       )}
 
-      {/* <div className="widget widget-coins">
-        <h5 className="title-widget">Trending coins</h5>
+      <div className="widget widget-coins">
+        <h5 className="title-widget">Trending Coins</h5>
         <TrendingCoins name={"Bitcoin"} index={1} image={"coin-01.png"} />
         <TrendingCoins name={"Ethereum"} index={2} image={"coin-02.png"} />
         <TrendingCoins name={"Cardano"} index={3} image={"coin-03.png"} />
         <TrendingCoins name={"Solana"} index={4} image={"coin-04.png"} />
         <TrendingCoins name={"Litecoin"} index={5} image={"coin-05.png"} />
-      </div> */}
+      </div>
+
       {orderHistory.length > 0 && (
         <div className="widget widget-history">
           <div className="flex items-center justify-between">
