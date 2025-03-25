@@ -1,22 +1,22 @@
 [
   {
     "title": "Set Up Your Wallet",
-    "description": "Fusce non dignissim velit, sit amet semper eros. Quisque orci est",
+    "description": "To get started, install a Solana-compatible wallet like Phantom or Solflare. Fund it with SOL to cover transaction fees.",
     "image": "01"
   },
   {
-    "title": "Create collection",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus",
+    "title": "Create a Collection",
+    "description": "Organize your NFTs by creating a collection. Define its name, description, and upload an eye-catching cover image.",
     "image": "02"
   },
   {
-    "title": "Add your NFTs",
-    "description": "Suspendisse porttitor id est non accumsan. Cras vel viverra velit",
+    "title": "Add Your NFTs",
+    "description": "Mint your NFTs by uploading unique artwork, adding metadata, and setting royalties to earn passive income from resales.",
     "image": "03"
   },
   {
-    "title": "Sell your NFTs",
-    "description": "Maecenas non semper quam. Vivamus et arcu condimentum ipsum consectetur",
+    "title": "Sell Your NFTs",
+    "description": "List your NFTs for sale on the marketplace, set a price, and promote your collection to attract buyers.",
     "image": "04"
   }
 ]
