@@ -2,41 +2,44 @@
   {
     "name": "Vitalik Buterin",
     "image": "08",
-    "price": "5,200.00"
+    "price": "9,200.00"
+  },
+  {
+    "name": "Satoshi Nakamoto",
+    "image": "13",
+    "price": "8,000.39"
+  },
+  {
+    "name": "Arlene McCoy",
+    "image": "10",
+    "price": "710.00"
+  },  
+   {
+    "name": "Lucas Martinez",
+    "image": "11",
+    "price": "80.95"
+  },
+  {
+    "name": "Ayush Lamba",
+    "image": "08",
+    "price": "70.05"
   },
   {
     "name": "Olivia Carter",
     "image": "09",
     "price": "50.00"
   },
-  {
-    "name": "Arlene McCoy",
-    "image": "10",
-    "price": "710.00"
-  },
-  {
-    "name": "Lucas Martinez",
-    "image": "11",
-    "price": "80.95"
-  },
-  {
+  
+ {
     "name": "Muse Cooper",
     "image": "12",
     "price": "7.04"
   },
+
   {
-    "name": "Ayush Lamba",
-    "image": "13",
-    "price": "70.05"
-  },
-  {
-    "name": "Sophia Bennett",
+    "name": "Sophia Bennedict",
     "image": "09",
     "price": "0.95"
-  },
-  {
-    "name": "Satoshi Nakamoto",
-    "image": "08",
-    "price": "8,000.39"
   }
+  
 ]
