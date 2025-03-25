@@ -1,28 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useWallet, useConnection } from "@solana/wallet-adapter-react";
 import { PublicKey, Transaction } from "@solana/web3.js";
-
+import { FaExternalLinkAlt } from "react-icons/fa"; // ✅ Fixed Import
 import { Notify } from "../../Context/constants";
-import { FaExternalLinkAlt } from "../SVG/index";
 
-// Fetch API keys securely
-const SHYFT_API_KEY = process.env.NEXT_PUBLIC_SHYFT_AIP_KEY;
-const SHYFT_ENDPOINT = process.env.NEXT_PUBLIC_SHYFT_ENDPOINT;
+// ✅ Fetch API keys securely & provide fallback values
+const SHYFT_API_KEY = process.env.NEXT_PUBLIC_SHYFT_AIP_KEY || "";
+const SHYFT_ENDPOINT = process.env.NEXT_PUBLIC_SHYFT_ENDPOINT || "";
 
 const BurnNFT = ({ burnNFT, setLoader }) => {
   const { connection } = useConnection();
   const { sendTransaction, publicKey } = useWallet();
   const [loading, setLoading] = useState(false);
+  const [network, setNetwork] = useState("devnet");
 
-  // Notification Helpers
+  // ✅ Ensure localStorage only runs on client-side
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedNetwork = localStorage.getItem("NETWORK") || "devnet";
+      setNetwork(storedNetwork);
+    }
+  }, []);
+
+  // ✅ Notification Helpers
   const notify = (msg, type = "success") => {
     if (type === "success") toast.success(msg, { duration: 2000 });
     else toast.error(msg, { duration: 2000 });
   };
 
-  // Burn NFT Function
+  // ✅ Burn NFT Function
   const handleBurnNFT = async () => {
     if (!burnNFT || !burnNFT.mint) {
       notify("Invalid NFT data!", "error");
@@ -38,26 +46,37 @@ const BurnNFT = ({ burnNFT, setLoader }) => {
       setLoading(true);
       setLoader(true);
 
-      let network = localStorage.getItem("NETWORK") || "devnet";
       const nftUrl = `${SHYFT_ENDPOINT}nft/burn_detach`;
 
-      const response = await axios.delete(nftUrl, {
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": SHYFT_API_KEY,
-        },
-        data: {
+      console.log("SHYFT API URL:", nftUrl);
+
+      // ✅ Changed DELETE to POST for proper request handling
+      const response = await axios.post(
+        nftUrl,
+        {
           network,
           wallet: publicKey.toString(),
           token_address: burnNFT.mint,
         },
-      });
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": SHYFT_API_KEY,
+          },
+        }
+      );
 
       if (!response.data.success) {
         throw new Error("Failed to burn NFT!");
       }
 
       const encodedTransaction = response.data.result.encoded_transaction;
+
+      // ✅ Ensure `encoded_transaction` exists before decoding
+      if (!encodedTransaction) {
+        throw new Error("No transaction data received!");
+      }
+
       const transaction = Transaction.from(Buffer.from(encodedTransaction, "base64"));
       const signature = await sendTransaction(transaction, connection);
       await connection.confirmTransaction(signature, "finalized");
@@ -97,7 +116,11 @@ const BurnNFT = ({ burnNFT, setLoader }) => {
                   disabled={loading}
                   onClick={handleBurnNFT}
                   className="tf-button style-1 h50"
-                  style={{ backgroundColor: loading ? "#ccc" : "#000", color: "white", cursor: loading ? "not-allowed" : "pointer" }}
+                  style={{
+                    backgroundColor: loading ? "#ccc" : "#000",
+                    color: "white",
+                    cursor: loading ? "not-allowed" : "pointer",
+                  }}
                 >
                   {loading ? "Burning..." : `Yes, Burn ${burnNFT.symbol}`}
                   <FaExternalLinkAlt />
@@ -114,4 +137,3 @@ const BurnNFT = ({ burnNFT, setLoader }) => {
 };
 
 export default BurnNFT;
-
