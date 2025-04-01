@@ -91,7 +91,8 @@ const contactUs = () => {
                     <div className="title">
                       <a href="#">Office address</a>
                     </div>
-                    <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
+                    <p>Olympia Tech Park,  Guindy, Chennai - 600032</p>
+
                   </div>
                 </div>
                 <div
