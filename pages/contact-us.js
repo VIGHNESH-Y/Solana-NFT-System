@@ -108,7 +108,7 @@ const contactUs = () => {
                     <div className="title">
                       <a href="#">Email</a>
                     </div>
-                    <p>open9@support.com open9vietnam@support.com</p>
+                    <p>vighnes2504@gmail.com <br /> aryasimlot165@gmail.com</p>
                   </div>
                 </div>
                 <div
@@ -126,8 +126,7 @@ const contactUs = () => {
                       <a href="#">Phone number</a>
                     </div>
                     <p>
-                      (316) 555-0116 <br />
-                      (219) 555-0114
+                    <p>(316) 555-0116 <br /> (219) 555-0114</p>
                     </p>
                   </div>
                 </div>
