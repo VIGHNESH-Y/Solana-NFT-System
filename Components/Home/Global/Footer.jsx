@@ -148,7 +148,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2023 OpeN9 - Made By @theblockchaincoders</p>
+          <p>Made By SRM CSE B</p>
           <ul className="flex">
             <li>
               <a href="#">Privacy Policy</a>
