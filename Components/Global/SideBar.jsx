@@ -108,7 +108,7 @@ const SideBar = ({
               <a target="_blank" href="/comming">
                 <SideBar_15 />
                 <FaExternalLinkAlt />
-                Comming Soon
+                Coming Soon
               </a>
             </li>
             <li>
