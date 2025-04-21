@@ -130,7 +130,7 @@ const SideBar = ({
       </div>
       <div className="bottom">
         <p>Made By</p>
-        <p>SRM STUDENTS/p>
+        <p>SRM STUDENTS</p>
       </div>
     </div>
   );
