@@ -129,8 +129,8 @@ const SideBar = ({
         </div>
       </div>
       <div className="bottom">
-        <p>© 2023 Made By</p>
-        <p>@theblockchaincoders</p>
+        <p>Made By</p>
+        <p>SRM STUDENTS/p>
       </div>
     </div>
   );
