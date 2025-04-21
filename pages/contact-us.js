@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import toast from "react-hot-toast";
@@ -37,7 +38,8 @@ const contactUs = () => {
                 <div className="col-12">
                   <div className="widget-gg-map">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.181738437529!2d80.1406904740196!3d12.822107787470507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525e41db76c6ab%3A0x3e3c6f5145d048aa!2sSRM%20Institute%20of%20Science%20and%20Technology!5e0!3m2!1sen!2sin!4v1713708572265!5m2!1sen!2sin"
+                      title="SRM University Map"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.286117034289!2d80.0405163!3d12.8237031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f72f1495b5d7%3A0x225d4f558cc1b74a!2sSRM%20Institute%20of%20Science%20and%20Technology%2C%20Kattankulathur!5e0!3m2!1sen!2sin!4v1713710535426!5m2!1sen!2sin"
                       width="100%"
                       height={460}
                       style={{ border: 0 }}
