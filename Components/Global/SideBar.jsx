@@ -132,7 +132,7 @@ const SideBar = ({
         <p>Made By</p>
         <p>SRM STUDENTS</p>
       </div>
-    </div>
+    </div> {/* Closing the outer div */}
   );
 };
 
