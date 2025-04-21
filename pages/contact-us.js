@@ -72,8 +72,7 @@ const contactUs = () => {
                       </div>
                     </h2>
                     <p className="pb-40">
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur.
+                      Feel free to reach out to us for any inquiries, support, or collaboration opportunities. We’re here to help and will get back to you as soon as possible.
                     </p>
                   </div>
                 </div>
